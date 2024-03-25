@@ -1,4 +1,5 @@
 import { IoIosStarOutline } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const BookCard = ({ book }) => {
 
@@ -7,11 +8,11 @@ const BookCard = ({ book }) => {
     const { yearOfPublishing, publisher, tags, category, rating, totalPages, review, img, author, title, id } = book;
 
     return (
-        <div className="p-6 rounded-lg border border-base-300">
+        <Link to={`/book/${id}`} className="p-6 rounded-lg border border-base-300 flex flex-col">
             <div className="bg-[#F3F3F3] rounded-xl p-2 flex flex-col justify-center items-center w-full h-[200px]">
                 <img src={img} alt="" className="w-1/3 rounded-md " />
             </div>
-            <div className="mt-6 mb-2 space-y-3">
+            <div className="mt-6 mb-2 space-y-3 flex-grow">
                 <div className="flex justify-between">
                     {
                         tags.map(tag => <span key={tag} className="block bg-[#F3F3F3] rounded-xl p-1 text-base font-medium tracking-widest  text-[#23BE0A]">{tag}</span>)
@@ -30,7 +31,7 @@ const BookCard = ({ book }) => {
                     <IoIosStarOutline className="text-lg"/>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 };
 
