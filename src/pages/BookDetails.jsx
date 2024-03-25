@@ -40,9 +40,10 @@ const BookDetails = () => {
             const isExist2 = storedWishList.find(item => item.id === book.id);
             if (!isExist2) {
                saveWishList(book);
+               alert('Added at Wish List');
             }
             else {
-                alert('Already Exist is WishList')
+                alert('Already Exist in WishList')
             }
         }
         else {
