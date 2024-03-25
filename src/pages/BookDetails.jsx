@@ -1,4 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { deleteBook, getReadBooks, getWishList, saveReadBook, saveWishList } from "../utils/storage";
 
 const BookDetails = () => {
     const books = useLoaderData();
@@ -8,6 +9,54 @@ const BookDetails = () => {
     console.log(book);
 
     const { yearOfPublishing, publisher, tags, category, rating, totalPages, review, img, author, title } = book;
+
+   
+
+    const handelRead = book => {
+        const storedWishList = getWishList();
+        if (storedWishList) {
+            const isExist2 = storedWishList.find(item => item.id === book.id);
+            if(isExist2){
+                deleteBook(book);
+            }
+        }
+
+        const storedReadBooks = getReadBooks();
+        const isExist = storedReadBooks.find(item => item.id === book.id);
+        if (!isExist) {
+            saveReadBook(book);
+        }
+        else {
+            alert('Already Exist!!!!!');
+        }
+    }
+
+
+    const handelWishList = book => {
+        const storedReadBooks = getReadBooks();
+        const isExist1 = storedReadBooks.find(item => item.id === book.id);
+        if (!isExist1) {
+            const storedWishList = getWishList();
+            const isExist2 = storedWishList.find(item => item.id === book.id);
+            if (!isExist2) {
+               saveWishList(book);
+            }
+            else {
+                alert('Already Exist is WishList')
+            }
+        }
+        else {
+            alert('Already Read !!!!!');
+        }
+    }
+
+
+
+
+
+
+
+
     return (
         <div className="card lg:card-side bg-base-100 mt-4 mb-2">
             <div className="w-2/5 bg-[#1313130D] rounded-xl flex flex-col justify-center">
@@ -32,8 +81,8 @@ const BookDetails = () => {
                 <p>Year of Publishing : <span className="font-bold">{yearOfPublishing}</span></p>
                 <p>Rating : <span className="font-bold">{rating}</span></p>
                 <div className="card-actions justify-start">
-                    <button className="py-2 px-3 rounded-lg font-bold text-black border bg-none">Read</button>
-                    <button className="py-2 px-3 rounded-lg font-bold text-white border bg-[#50B1C9] hover:bg-[#50B1C9] border-none">Wishlist</button>
+                    <button onClick={() => handelRead(book)} className="py-2 px-3 rounded-lg font-bold text-black border bg-none">Read</button>
+                    <button onClick={() => handelWishList(book)} className="py-2 px-3 rounded-lg font-bold text-white border bg-[#50B1C9] border-none">Wishlist</button>
                 </div>
             </div>
         </div>
