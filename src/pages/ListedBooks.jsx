@@ -15,8 +15,9 @@ const ListedBooks = () => {
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn m-1 bg-[#23BE0A] hover:bg-[#23BE0A] text-white font-bold">Sort By <span><IoIosArrowDown /></span></div>
                     <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                        <li><a>Item 1</a></li>
-                        <li><a>Item 2</a></li>
+                        <li><a>Rating </a></li>
+                        <li><a>Page </a></li>
+                        <li><a>Year of Publishing</a></li>
                     </ul>
                 </div>
             </div>

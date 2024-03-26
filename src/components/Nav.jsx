@@ -11,7 +11,7 @@ const Nav = () => {
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                         <li className="text-base font-bold"><NavLink to="/">Home</NavLink></li>
                         <li className="text-base font-bold"><NavLink to="/list">Listed Books</NavLink></li>
-                        <li className="text-base font-bold"><a>Pages to Read</a></li>
+                        <li className="text-base font-bold"><NavLink to = "/stat">Pages to Read</NavLink></li>
                     </ul>
                 </div>
                 <NavLink to="/" className="btn btn-ghost text-2xl font-bold">Book Vibe</NavLink>
@@ -20,7 +20,7 @@ const Nav = () => {
                 <ul className="menu menu-horizontal px-1">
                     <li className="text-base font-bold"><NavLink to="/">Home</NavLink></li>
                     <li className="text-base font-bold"><NavLink to="/list">Listed Books</NavLink></li>
-                    <li className="text-base font-bold"><a>Pages to Read</a></li>
+                    <li className="text-base font-bold"><NavLink to="/stat">Pages to Read</NavLink></li>
                 </ul>
             </div>
             <div className="navbar-end gap-2">
