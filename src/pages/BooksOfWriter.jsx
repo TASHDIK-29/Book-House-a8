@@ -20,7 +20,7 @@ const BooksOfWriter = () => {
     const writer = writers.find(writer => writer.id === idInt);
     return (
         <div className='mb-12'>
-            <div className="flex justify-center items-center h-28 bg-black mt-12 mb-8">
+            <div className="flex justify-center items-center h-28 bg-black bg-opacity-25 rounded-md mt-12 mb-8">
                 <h1 className="text-5xl text-white font-bold">{writer.name}</h1>
             </div>
             <div className='grid grid-cols-3 gap-4'>
