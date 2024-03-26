@@ -1,8 +1,35 @@
 import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { Link, Outlet } from "react-router-dom";
+import { getReadBooks, sortReadBooks } from "../utils/storage";
 
 const ListedBooks = () => {
+
+    const handelSort = filter =>{
+
+        console.log(filter);
+
+        const readBooks = getReadBooks();
+        console.log(readBooks);
+
+        if(filter === 'rating'){
+            readBooks.sort( (b, a) => a.rating - b.rating)
+            sortReadBooks(readBooks);
+            console.log(readBooks);
+        }
+        else if(filter === 'page'){
+            readBooks.sort( (b, a) => a.totalPages - b.totalPages)
+            sortReadBooks(readBooks);
+            console.log(readBooks);
+        }
+        else if(filter === 'year'){
+            readBooks.sort( (b, a) => a.yearOfPublishing - b.yearOfPublishing)
+            sortReadBooks(readBooks);
+            console.log(readBooks);
+        }
+
+       
+    }
 
     const [count, setCount] = useState(1);
     return (
@@ -15,9 +42,9 @@ const ListedBooks = () => {
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn m-1 bg-[#23BE0A] hover:bg-[#23BE0A] text-white font-bold">Sort By <span><IoIosArrowDown /></span></div>
                     <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                        <li><a>Rating </a></li>
-                        <li><a>Page </a></li>
-                        <li><a>Year of Publishing</a></li>
+                        <li><a onClick={() => handelSort('rating')}>Rating </a></li>
+                        <li><a onClick={() => handelSort('page')}>Page </a></li>
+                        <li><a onClick={() => handelSort('year')}>Year of Publishing</a></li>
                     </ul>
                 </div>
             </div>

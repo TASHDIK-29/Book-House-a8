@@ -17,6 +17,10 @@ const saveReadBook = book =>{
     alert("Successfully Added");
 }
 
+const sortReadBooks = books =>{
+    localStorage.setItem('ReadBook', JSON.stringify(books));
+}
+
 
 const getWishList = () =>{
     let books= [];
@@ -38,6 +42,10 @@ const saveWishList = book =>{
 
 }
 
+const sortWishList = books =>{
+    localStorage.setItem('WishBook', JSON.stringify(books));
+}
+
 
 const deleteBook = book =>{
     let books = getWishList();
@@ -47,4 +55,6 @@ const deleteBook = book =>{
 }
 
 
-export { getReadBooks, saveReadBook, getWishList, saveWishList, deleteBook }
+
+
+export { getReadBooks, saveReadBook, getWishList, saveWishList, deleteBook, sortReadBooks, sortWishList }
