@@ -16,6 +16,9 @@ import Wish from './components/Wish';
 import PagesToRead from './pages/PagesToRead';
 import ErrorPage from './pages/ErrorPage';
 import Trending from './pages/Trending';
+import Writer from './pages/Writer';
+import WriterCard from './components/WriterCard';
+import BooksOfWriter from './pages/BooksOfWriter';
 
 
 
@@ -57,7 +60,17 @@ const router = createBrowserRouter([
         path: "/trend",
         element: <Trending/>,
         loader: () => fetch('/books.json')
-      }
+      },
+      {
+        path: "/writer",
+        element: <Writer/>,
+        loader: () => fetch('/writer.json')
+      },
+      {
+        path: "/writer/:id",
+        element: <BooksOfWriter/>,
+        loader: () => fetch('/writer.json'),
+      },
     ]
   },
 ]);

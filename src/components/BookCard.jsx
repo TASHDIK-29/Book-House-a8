@@ -1,7 +1,7 @@
 import { IoIosStarOutline } from "react-icons/io";
 import { Link } from "react-router-dom";
 
-const BookCard = ({ book }) => {
+const BookCard = ({ book , isWriter}) => {
 
     //console.log(book);
 
@@ -19,7 +19,7 @@ const BookCard = ({ book }) => {
                     }
                 </div>
                 <h2 className="text-xl font-semibold tracking-wide">{title}</h2>
-                <h2 className="text-base font-bold tracking-wide">By : {author}</h2>
+                {!isWriter && <h2 className="text-base font-bold tracking-wide">By : {author}</h2>}
             </div>
 
             <div className="flex justify-between pt-2 border-t-2 border-dashed">

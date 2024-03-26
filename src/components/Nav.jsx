@@ -13,6 +13,7 @@ const Nav = () => {
                         <li className="text-base font-bold"><NavLink to="/list">Listed Books</NavLink></li>
                         <li className="text-base font-bold"><NavLink to = "/stat">Pages to Read</NavLink></li>
                         <li className="text-base font-bold"><NavLink to="/trend">Trending</NavLink></li>
+                        <li className="text-base font-bold"><NavLink to="/writer">Writer</NavLink></li>
                     </ul>
                 </div>
                 <NavLink to="/" className="btn btn-ghost text-2xl font-bold">Book Vibe</NavLink>
@@ -23,6 +24,7 @@ const Nav = () => {
                     <li className="text-base font-bold"><NavLink to="/list">Listed Books</NavLink></li>
                     <li className="text-base font-bold"><NavLink to="/stat">Pages to Read</NavLink></li>
                     <li className="text-base font-bold"><NavLink to="/trend">Trending</NavLink></li>
+                    <li className="text-base font-bold"><NavLink to="/writer">Writer</NavLink></li>
                 </ul>
             </div>
             <div className="navbar-end gap-2">
