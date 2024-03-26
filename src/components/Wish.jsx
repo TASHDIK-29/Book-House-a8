@@ -1,10 +1,15 @@
+import { useEffect, useState } from "react";
 import { getWishList } from "../utils/storage";
 import WishCard from "./WishCard";
 
 const Wish = () => {
 
-    const wishBooks = getWishList();
-    console.log(wishBooks);
+    const [wishBooks, setWishBooks] = useState([]);
+
+    useEffect(() => {
+        const books = getWishList();
+        setWishBooks(books);
+    }, [wishBooks])
 
     return (
         <div className="mt-10">

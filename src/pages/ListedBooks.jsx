@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { Link, Outlet } from "react-router-dom";
-import { getReadBooks, sortReadBooks } from "../utils/storage";
+import { getReadBooks, getWishList, sortReadBooks, sortWishList } from "../utils/storage";
 
 const ListedBooks = () => {
 
@@ -10,22 +10,26 @@ const ListedBooks = () => {
         console.log(filter);
 
         const readBooks = getReadBooks();
+        const wishList = getWishList();
         console.log(readBooks);
 
         if(filter === 'rating'){
             readBooks.sort( (b, a) => a.rating - b.rating)
+            wishList.sort( (b, a) => a.rating - b.rating)
             sortReadBooks(readBooks);
-            console.log(readBooks);
+            sortWishList(wishList);
         }
         else if(filter === 'page'){
             readBooks.sort( (b, a) => a.totalPages - b.totalPages)
+            wishList.sort( (b, a) => a.totalPages - b.totalPages)
             sortReadBooks(readBooks);
-            console.log(readBooks);
+            sortWishList(wishList);
         }
         else if(filter === 'year'){
             readBooks.sort( (b, a) => a.yearOfPublishing - b.yearOfPublishing)
+            wishList.sort( (b, a) => a.yearOfPublishing - b.yearOfPublishing)
             sortReadBooks(readBooks);
-            console.log(readBooks);
+            sortWishList(wishList);
         }
 
        
