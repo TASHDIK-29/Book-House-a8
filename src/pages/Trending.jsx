@@ -8,7 +8,7 @@ const Trending = () => {
     return (
         <>
             <div className="text-center my-10">
-                <h1 className="text-5xl font-bold underline">Weekly Top Rated 5 Books</h1>
+                <h1 className="text-5xl font-bold underline">Weekly Top Rated <span className="text-6xl text-[#23BE0A]">5</span> Books</h1>
             </div>
             <div>
                 {

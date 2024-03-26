@@ -10,8 +10,7 @@ const Read = () => {
         setBooks(readBooks);
     // console.log(readBooks);
     }, [books])
-    // const readBooks = getReadBooks();
-    // console.log(readBooks);
+   
 
     return (
         <div className="mt-10">
