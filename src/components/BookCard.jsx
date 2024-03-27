@@ -9,8 +9,8 @@ const BookCard = ({ book , isWriter}) => {
 
     return (
         <Link to={`/book/${id}`} className="p-6 rounded-lg border border-base-300 flex flex-col">
-            <div className="bg-[#F3F3F3] rounded-xl p-2 flex flex-col justify-center items-center w-full h-[200px]">
-                <img src={img} alt="" className="w-1/2 lg:w-1/3 rounded-md " />
+            <div className="bg-[#F3F3F3] rounded-xl flex flex-col justify-center items-center w-full h-[200px]">
+                <img src={img} alt="" className="w-28 lg:w-1/3 rounded-md " />
             </div>
             <div className="mt-6 mb-2 space-y-3 flex-grow">
                 <div className="flex justify-between gap-2">
