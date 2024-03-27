@@ -39,7 +39,7 @@ const ListedBooks = () => {
     return (
         <div>
             <div className="h-20 rounded-xl mt-8 bg-base-200 flex justify-center items-center">
-                <h1 className="text-2xl font-bold">Books</h1>
+                <h1 className="text-4xl font-bold">Books</h1>
             </div>
 
             <div className=" flex flex-col items-center justify-center mt-6">

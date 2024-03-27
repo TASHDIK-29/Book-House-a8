@@ -10,10 +10,10 @@ const BookCard = ({ book , isWriter}) => {
     return (
         <Link to={`/book/${id}`} className="p-6 rounded-lg border border-base-300 flex flex-col">
             <div className="bg-[#F3F3F3] rounded-xl p-2 flex flex-col justify-center items-center w-full h-[200px]">
-                <img src={img} alt="" className="w-1/3 rounded-md " />
+                <img src={img} alt="" className="w-1/2 lg:w-1/3 rounded-md " />
             </div>
             <div className="mt-6 mb-2 space-y-3 flex-grow">
-                <div className="flex justify-between">
+                <div className="flex justify-between gap-2">
                     {
                         tags.map(tag => <span key={tag} className="block bg-[#F3F3F3] rounded-xl p-1 text-base font-medium tracking-widest  text-[#23BE0A]">{tag}</span>)
                     }

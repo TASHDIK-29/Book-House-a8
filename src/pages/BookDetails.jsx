@@ -60,17 +60,17 @@ const BookDetails = () => {
 
     return (
         <div className="card lg:card-side bg-base-100 mt-4 mb-2">
-            <div className="w-2/5 bg-[#1313130D] rounded-xl flex flex-col justify-center">
-                <figure><img className="w-3/4" src={img} alt="Album" /></figure>
+            <div className="py-3 lg:w-2/5 bg-[#1313130D] rounded-xl flex flex-col justify-center">
+                <figure><img className="w-2/5 lg:w-3/5" src={img} alt="Album" /></figure>
             </div>
-            <div className="card-body space-y-1 w-3/5">
+            <div className="card-body space-y-1 lg:w-3/5">
                 <h2 className="card-title text-4xl">{title}</h2>
                 <p className="font-medium text-lg">By : {author}</p>
                 <hr />
                 <h1 className="font-medium">{category}</h1>
                 <hr />
                 <p><span className="font-bold">Review</span> : {review}</p>
-                <div className="flex items-center gap-8">
+                <div className="lg:flex items-center gap-8 space-y-2">
                     <h1 className="font-bold">Tag</h1>
                     {
                         tags.map(tag => <h1 className="block bg-[#F3F3F399] rounded-xl p-1 text-base font-medium tracking-widest  text-[#23BE0A]" key={tag}>#{tag}</h1>)

@@ -30,10 +30,11 @@ const PagesToRead = () => {
 
 
     return (
-        <div>
+        <div className="bg-[#13131308] rounded-xl py-4 mt-10 mb-4" style={{ width: '100%', overflowX: 'auto' }}>
+            
             <BarChart
-                width={1300}
-                height={500}
+                width={window.innerWidth < 800 ? window.innerWidth * .9 : 1250}
+                height={window.innerWidth < 800 ? window.innerHeight * .7 : 500}
                 data={data}
                 margin={{
                     top: 20,

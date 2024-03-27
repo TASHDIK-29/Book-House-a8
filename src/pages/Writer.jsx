@@ -23,7 +23,7 @@ const Writer = () => {
             <div className="flex justify-center items-center h-28 bg-black bg-opacity-15 rounded-md mt-12 mb-8">
                 <h1 className="text-5xl text-black font-bold">WRITERS</h1>
             </div>
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
                 {
                     totalWriters.map(writer => <WriterCard key={writer} writer={writer}></WriterCard>)
                 }

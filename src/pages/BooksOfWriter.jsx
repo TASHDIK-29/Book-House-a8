@@ -20,10 +20,10 @@ const BooksOfWriter = () => {
     const writer = writers.find(writer => writer.id === idInt);
     return (
         <div className='mb-12'>
-            <div className="flex justify-center items-center h-28 bg-black bg-opacity-15 rounded-md mt-12 mb-8">
+            <div className="text-center flex justify-center items-center h-28 bg-black bg-opacity-15 rounded-md mt-12 mb-8">
                 <h1 className="text-5xl text-black font-bold">{writer.name}<span className='text-[#23BE0A] font-bold text-5xl'>'</span>s</h1>
             </div>
-            <div className='grid grid-cols-3 gap-4'>
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-4'>
                 {
                     books && books.map(book => <BookCard key={book.id} book={book} isWriter={true}></BookCard>)
                 }
