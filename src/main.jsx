@@ -19,6 +19,7 @@ import Trending from './pages/Trending';
 import Writer from './pages/Writer';
 import WriterCard from './components/WriterCard';
 import BooksOfWriter from './pages/BooksOfWriter';
+import { Toaster } from 'react-hot-toast';
 
 
 
@@ -80,5 +81,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
        <RouterProvider router={router} />
+       <Toaster />
   </React.StrictMode>,
 )

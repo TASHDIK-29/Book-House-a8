@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 
 const getReadBooks = () =>{
     let books= [];
@@ -14,7 +15,7 @@ const saveReadBook = book =>{
     const books = getReadBooks();
     books.push(book);
     localStorage.setItem('ReadBook', JSON.stringify(books));
-    alert("Successfully Added");
+    toast.success("Congratulations for Reading");
 }
 
 const sortReadBooks = books =>{

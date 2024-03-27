@@ -1,5 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { deleteBook, getReadBooks, getWishList, saveReadBook, saveWishList } from "../utils/storage";
+import toast from "react-hot-toast";
 
 const BookDetails = () => {
     const books = useLoaderData();
@@ -27,7 +28,7 @@ const BookDetails = () => {
             saveReadBook(book);
         }
         else {
-            alert('Already Exist!!!!!');
+            toast.error('You Already Read This Book');
         }
     }
 
@@ -40,14 +41,14 @@ const BookDetails = () => {
             const isExist2 = storedWishList.find(item => item.id === book.id);
             if (!isExist2) {
                saveWishList(book);
-               alert('Added at Wish List');
+               toast.success('Successfully Added to Wishlist');
             }
             else {
-                alert('Already Exist in WishList')
+                toast.error('Already Exist in WishList')
             }
         }
         else {
-            alert('Already Read !!!!!');
+            toast.error('You Already Read This Book');
         }
     }
 
